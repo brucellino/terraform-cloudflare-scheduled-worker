@@ -30,6 +30,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [cloudflare_worker_script.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/worker_script) | resource |
 | [cloudflare_workers_kv_namespace.n](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/workers_kv_namespace) | resource |
 | [cloudflare_accounts.mine](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/accounts) | data source |
 
@@ -37,6 +38,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_script_name"></a> [script\_name](#input\_script\_name) | Name of the script that will be added to Cloudflare workers | `string` | `"terraformed_script"` | no |
 | <a name="input_workers_kv_namespace"></a> [workers\_kv\_namespace](#input\_workers\_kv\_namespace) | Name of the KV workers namespace to create for this function | `string` | `"terraform_namespace"` | no |
 
 ## Outputs
