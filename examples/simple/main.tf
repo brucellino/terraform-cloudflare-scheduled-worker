@@ -1,21 +1,44 @@
-# This is the default example
-# customise it as you see fit for your example usage of your module
+terraform {
+  backend "consul" {
+    path = "terraform/modules/terraform-cloudflare-scheduled-worker/example/simple"
+  }
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "4.3.0"
+    }
+    vault = {
+      source  = "hashicorp/vault"
+      version = "3.14.0"
+    }
+  }
+}
 
-# add provider configurations here, for example:
-# provider "aws" {
-#
-# }
+variable "vault_cf_mount" {
+  type        = string
+  description = "Vault mount where the cloudflare secret is stored"
+  default     = "cloudflare"
+}
 
-# Declare your backends and other terraform configuration here
-# This is an example for using the consul backend.
-# terraform {
-#   backend "consul" {
-#     path = "test_module/simple"
-#   }
-# }
+variable "vault_cf_secret" {
+  type        = map(string)
+  description = "Name of the cloudflare secret"
+  default = {
+    name = "terraform"
+    key  = "api_token"
+  }
+}
+
+
+data "vault_kv_secret_v2" "cloudflare" {
+  mount = var.vault_cf_mount
+  name  = var.vault_cf_secret.name
+}
+provider "cloudflare" {
+  api_token = data.vault_kv_secret_v2.cloudflare.data["${var.vault_cf_secret.key}"]
+}
 
 
 module "example" {
   source = "../../"
-  dummy  = "test"
 }
