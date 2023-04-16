@@ -10,6 +10,18 @@
 terraform {
   required_version = ">1.2.0"
   required_providers {
-    # Add your required providers here.
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
+    vault = {
+      source  = "hashicorp/vault"
+      version = "~> 3.14"
+    }
+  }
+
+  backend "consul" {
+    scheme = "http"
+    path   = "terraform/modules/cloudflare-scheduled-worker"
   }
 }
