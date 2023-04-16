@@ -30,11 +30,14 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [cloudflare_workers_kv_namespace.n](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/workers_kv_namespace) | resource |
 | [cloudflare_accounts.mine](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/accounts) | data source |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_workers_kv_namespace"></a> [workers\_kv\_namespace](#input\_workers\_kv\_namespace) | Name of the KV workers namespace to create for this function | `string` | `"terraform_namespace"` | no |
 
 ## Outputs
 
