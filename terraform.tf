@@ -19,9 +19,4 @@ terraform {
       version = "~> 3.14"
     }
   }
-
-  backend "consul" {
-    scheme = "http"
-    path   = "terraform/modules/cloudflare-scheduled-worker"
-  }
 }
