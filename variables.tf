@@ -10,3 +10,8 @@ variable "script_name" {
   description = "Name of the script that will be added to Cloudflare workers"
   default     = "terraformed_script"
 }
+
+variable "schedules" {
+  type    = set(string)
+  default = ["* * * * *"] # every minute
+}
