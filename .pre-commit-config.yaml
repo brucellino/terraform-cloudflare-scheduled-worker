@@ -30,6 +30,8 @@ repos:
       - id: prettier
         types:
           - javascript
+        additional_dependencies:
+          - '@prettier/plugin-typescript'
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.22.0
     hooks:
