@@ -14,7 +14,7 @@ The `examples/` directory contains the example usage of this module.
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >1.2.0 |
 | <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 4.0 |
-| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 3.14 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | ~> 4.0 |
 
 ## Providers
 
