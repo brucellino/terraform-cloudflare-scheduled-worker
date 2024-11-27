@@ -20,7 +20,7 @@ The `examples/` directory contains the example usage of this module.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.46.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | 4.47.0 |
 
 ## Modules
 
